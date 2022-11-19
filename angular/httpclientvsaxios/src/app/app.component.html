@@ -1,0 +1,14 @@
+
+<button (click)="getPosts()">get</button>
+<button (click)="createPost()">create</button>
+{{newPost | async |json}}
+<input type="number" [(ngModel)]="postId" (change)="getPostById(postId)">
+<div *ngFor="let post of posts |async"> 
+<h1>
+  {{post.id}}
+  {{post.title}}
+</h1>
+</div>
+<button (click)="deletePost()">delete</button>
+<button (click)="editPost()">edit</button>
+<router-outlet></router-outlet> 
